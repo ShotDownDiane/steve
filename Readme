@@ -1,1 +1,6 @@
-this is a readme
+run code with:
+
+cd StableST
+python run.py [DATASET]
+
+the [DATASET] is equal NYCBike1,NYCBike2,NYCTaxi,BJTaxi
