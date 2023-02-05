@@ -1,6 +1,6 @@
 run code with:
 
 cd StableST
-python run.py [DATASET]
+tar -xvf data.tar
+python run.py NYCBike1
 
-the [DATASET] is equal NYCBike1,NYCBike2,NYCTaxi,BJTaxi
