@@ -125,6 +125,8 @@ class StableST(nn.Module):
         self.optimizer_mi_net=torch.optim.Adam(self.mi_net.parameters(),lr=args.lr_init)
 
         self.mae = masked_mae_loss(mask_value=5.0)
+        
+        self.alpha=nn.Parameter(torch.rand(1,args.num_nodes,2))
 
 
     def forward(self, x):
@@ -167,6 +169,11 @@ class StableST(nn.Module):
 
         # out =torch.cat([out_1,out_2],dim=1).permute(0,2,3,1)
         # out = self.out_mlp(out).squeeze()
+        alpha=F.sigmoid(self.alpha)
+        out_2 = alpha*out_2
+
+        out_1 = (1-alpha)*out_1
+        
         out = out_2 + out_1
         out = out.squeeze(1)
         out_1=out_1.squeeze(1)
