@@ -1,6 +1,6 @@
 ## global
 seed: 42
-device: cuda:2
+device: cuda:1
 mode: train
 best_path: None 
 debug: False 
@@ -31,8 +31,8 @@ layers: 3
 
 ## train 
 epochs: 400
-lr_mode: only
-lr_init: 0.01
+lr_mode: add
+lr_init: 0.001
 early_stop: True
 early_stop_patience: 50
 grad_norm: True
@@ -40,5 +40,5 @@ max_grad_norm: 5
 use_dwa: True         # whether to use dwa for loss balance
 temp: 2               # tempurature parameter in dwa, a larger T means more similer weights
 MMI: False
-lr_patience: 30
+lr_patience: 20
 
