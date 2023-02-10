@@ -162,11 +162,11 @@ class Trainer(object):
             
             self.lr_scheduler.step(val_epoch_loss)
 
-            # early stopping
-            # if self.args.early_stop and not_improved_count == self.args.early_stop_patience:
-            #     self.logger.info("Validation performance didn\'t improve for {} epochs. "
-            #                      "Training stops.".format(self.args.early_stop_patience))
-            #     break
+            #early stopping
+            if self.args.early_stop and not_improved_count == self.args.early_stop_patience:
+                self.logger.info("Validation performance didn\'t improve for {} epochs. "
+                                 "Training stops.".format(self.args.early_stop_patience))
+                break
 
 
         training_time = time.time() - start_time
