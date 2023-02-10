@@ -33,11 +33,11 @@ epochs: 200
 lr_init: 0.001
 lr_mode: only
 
-early_stop: False
+early_stop: True
 early_stop_patience: 50
 grad_norm: True
 max_grad_norm: 5
 use_dwa: True         # whether to use dwa for loss balance
 temp: 4               # tempurature parameter in dwa, a larger T means more similer weights
 MMI: False
-lr_patience: 30
+lr_patience: 20
