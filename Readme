@@ -1,6 +1,6 @@
 run code with:
 
-cd StableST
+cd CaST
 tar -xvf data.tar
 python run.py NYCBike1
 
