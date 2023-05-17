@@ -1,6 +1,4 @@
 import os
-import sys
-sys.path.append('/home/zhangwt/StableST')
 
 import warnings
 from lib.metrics import test_metrics
