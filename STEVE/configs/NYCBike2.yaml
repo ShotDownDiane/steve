@@ -1,0 +1,44 @@
+## global
+seed: 42
+device: cuda:1
+mode: train
+best_path: None 
+debug: False 
+
+## data
+data_dir: data
+dataset: NYCBike2 
+input_length: 35
+batch_size: 64
+test_batch_size: 64
+graph_file: data/NYCBike2/adj_mx.npz  # num_nodes 200 (20 x 10)
+num_nodes: 200
+
+len_closeness: 8
+len_period: 27
+len_trend: 0
+
+## model 
+d_input: 2                  # means inflow and outflow
+d_output: 2                 # means inflow and outflow
+d_model: 32
+dropout: 0.3
+percent: 0.1                # augumentation percentage  
+shm_temp: 0.5               # temperature for loss of spatial heterogeneity modeling  , 0.5 is best for NYCBike
+nmb_prototype: 10           # number of clusters
+yita: 0.5                   # balance for inflow loss and outflow loss, $yita * inflow + (1 - yita) * outflow$
+layers: 3
+
+## train 
+epochs: 400
+lr_mode: add
+lr_init: 0.001
+early_stop: True
+early_stop_patience: 50
+grad_norm: True
+max_grad_norm: 5
+use_dwa: True         # whether to use dwa for loss balance
+temp: 2               # tempurature parameter in dwa, a larger T means more similer weights
+MMI: True
+lr_patience: 20
+
