@@ -1,6 +1,0 @@
-run code with:
-
-cd STEVE
-tar -xvf data.tar
-python run.py --config_file=configs/NYCBike1
-
